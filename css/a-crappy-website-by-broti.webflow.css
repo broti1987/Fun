@@ -572,7 +572,9 @@
 
 .btn_link {
   z-index: 10;
+  width: 12em;
   height: 12em;
+  min-height: 12em;
   min-width: 12em;
   color: #efefef;
   background-color: #e8552f;
@@ -590,6 +592,7 @@
   overflow: hidden;
   box-shadow: 7px 7px .5em -.28em #000, 11px 11px 2.2em -.6em #000;
 }
+
 
 .btn_link:active {
   color: #e2e2e2;
