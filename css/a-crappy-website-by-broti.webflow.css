@@ -937,6 +937,17 @@
   mix-blend-mode: screen;
 }
 
+.btn, .btn.w--current {
+  color: #0f0;
+  background-color: #000;
+  border: 1px solid #0f0;
+  margin-bottom: 1em;
+  padding: 1em;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 1em;
+  line-height: 100%;
+}
+
 @media screen and (max-width: 991px) {
   .nav, .social-links {
     background-color: rgba(0, 0, 0, 0);
