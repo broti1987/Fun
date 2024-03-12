@@ -1,0 +1,404 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
+<!--  Last Published: Tue Mar 12 2024 15:19:35 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="65f02fe7b618c460d27d29c4" data-wf-site="65e828caee872b2ac2189aae">
+<head>
+  <meta charset="utf-8">
+  <title>Jargon Generator</title>
+  <meta content="Impress your boss by speaking fluent Linkedin!" name="description">
+  <meta content="Jargon Generator" property="og:title">
+  <meta content="Impress your boss by speaking fluent Linkedin!" property="og:description">
+  <meta content="Jargon Generator" property="twitter:title">
+  <meta content="Impress your boss by speaking fluent Linkedin!" property="twitter:description">
+  <meta property="og:type" content="website">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/a-crappy-website-by-broti.webflow.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Press Start 2P:regular"]  }});</script>
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+</head>
+<body class="body">
+  <div id="pre" style="display:flex" class="preloader"><img src="images/Computer_Loader.gif" loading="lazy" alt="" class="preloader-image"></div>
+  <div class="w-layout-blockcontainer jargon-header w-container">
+    <div class="w-layout-blockcontainer jargon-title w-container">
+      <h1 class="h1 jargon">Jargon Generator</h1>
+      <h1 class="h2 jargon">Speak Fluent Linkedin!</h1>
+    </div>
+    <a href="index.html" class="jargon-back-button w-button">◄</a>
+  </div>
+  <section class="generator-wrapper">
+    <div id="generator" class="generated-lines _1 w-embed">
+      <div class="main" id="leadin"> </div>
+      <div class="phrase-text" id="phrase"> </div>
+    </div>
+  </section>
+  <div class="w-layout-blockcontainer container w-container">
+    <div id="makeNoise" class="generate-button w-embed"><button class="generatebutton" onclick="generatePhrase()" type="button">
+        <span class="refresh">
+          Generate!
+        </span>
+        <style>
+.generatebutton {
+ width: 100%;
+ background: transparent;
+ padding: 1em
+}
+</style>
+      </button></div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65e828caee872b2ac2189aae" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <script>
+const leadIns = [
+ "This quarter, we should really be focused on",
+  "We're creating a new department that specializes in",
+  "We strive for expertise in",
+  "Most problems are easily solved with",
+  "Web 4.0 is driven by",
+  "Our primary goal this year is to enhance",
+  "In the upcoming months, our team will prioritize",
+  "Our core competency lies in",
+  "The key to success in this project is",
+  "To stay ahead of the curve, we're focusing on",
+  "A crucial aspect of our strategy is",
+  "One area we're exploring further is",
+  "Our vision for the future includes",
+  "To address current challenges, we're implementing",
+  "The cornerstone of our approach is",
+  "Innovation is fueled by",
+  "Our roadmap for success involves",
+  "The foundation of our company is built on",
+  "To meet customer needs, we're developing",
+  "Our commitment to excellence means",
+  "Strategic planning begins with",
+  "Success in this market demands",
+  "We're investing heavily in",
+  "Our team's strength lies in",
+  "Driving growth requires",
+  "Our competitive advantage stems from",
+  "To improve efficiency, we're adopting",
+  "The future of our industry hinges on",
+  "To ensure sustainability, we're focusing on",
+  "Our success story starts with"
+];
+const prefixes = [
+  'un',
+  'in',
+  'im',
+  'il',
+  'ir',
+  'dis',
+  'non',
+  'anti',
+  'de',
+  'mis',
+  'over',
+  'under',
+  'sub',
+  'pre',
+  'fore',
+  'post',
+  're',
+  'ex',
+  'multi',
+  'hyper',
+  'super',
+  'ultra',
+  'semi',
+  'co',
+  'inter',
+  'trans',
+  'anti',
+  'counter',
+  'micro',
+  'macro',
+  'semi',
+  'demi',
+  'mega',
+  'crypto',
+  'sub',
+  'inter',
+  'nano',
+  'anti',
+  'intra',
+  'super',
+  'extra',
+  'contra',
+  'counter',
+  'hyper',
+  'pre',
+  'trans',
+  'ultra',
+  'non',
+  'meta',
+  'tele',
+  'chrono',
+  'eco',
+  'over'
+];
+const adj = [
+  'innovative',
+  'ergonomic',
+  'user-friendly',
+  'aesthetic',
+  'functional',
+  'sustainable',
+  'sleek',
+  'intuitive',
+  'modular',
+  'customizable',
+  'efficient',
+  'durable',
+  'stylish',
+  'cutting-edge',
+  'versatile',
+  'interactive',
+  'seamless',
+  'modern',
+  'minimalistic',
+  'impactful',
+  'user-centric',
+  'engaging',
+  'practical',
+  'high-quality',
+  'forward-thinking',
+  'distinctive',
+  'elegant',
+  'premium',
+  'futuristic',
+  'responsive',
+  'augmented',
+  'neural',
+  'fungible',
+  'virtual',
+  'distributed',
+  'quantum',
+  'artificial',
+  'spacial',
+  'actionable',
+  'accelerated',
+  'centralized',
+  'decentralized',
+  'advanced',
+  'automated',
+  'compact',
+  'efficient',
+  'intuitive',
+  'secure',
+  'aware',
+  'digital',
+  'innovative',
+  'intelligent',
+  'modern',
+  'mobile',
+  'wireless',
+  'encrypted',
+  'accessible',
+  'nuclear',
+  'proprietary',
+  'mechanical',
+  'electronic',
+  'internal',
+  'organic',
+  'genetic',
+  'molecular',
+  'optical',
+  'immersive',
+  'restructured',
+  'weighted',
+  'financial',
+  'deferred',
+  'expected',
+  'external',
+  'progressive',
+  'social',
+  'viral',
+  'generative',
+  'economic',
+  'integrated',
+  'optimized',
+  'crowdsourced',
+  'enterprise',
+  'unified',
+  'static',
+  'dynamic',
+  'private',
+  'analog',
+  'cellular',
+  'creative',
+  'algorithmic',
+  'fractional',
+  'funded'
+];
+const nouns = [
+  'design',
+  'prototype',
+  'iteration',
+  'thinking',
+  'factors',
+  'usability',
+  'experience',
+  'interface',
+  'ergonomics',
+  'aesthetics',
+  'form',
+  'material',
+  'functionality',
+  'manufacturability',
+  'sustainability',
+  'branding',
+  'packaging',
+  'research',
+  'analysis',
+  'forecasting',
+  'ideation',
+  'modeling',
+  'CAD (Computer-Aided Design)',
+  'specifications',
+  'validation',
+  'assembly',
+  'concept',
+  'user',
+  'market',
+  'trend',
+  'data',
+  'tokens',
+  'services',
+  'reality',
+  'robotics',
+  'automation',
+  'networks',
+  'intelligence',
+  'computing',
+  'interfaces',
+  'experiences',
+  'platforms',
+  'currency',
+  'disruption',
+  'analytics',
+  'inducers',
+  'displays',
+  'drivers',
+  'integration',
+  'transformation',
+  'cryptography',
+  'programming',
+  'programs',
+  'structures',
+  'viruses',
+  'systems',
+  'devices',
+  'adapters',
+  'peripherals',
+  'extensions',
+  'distribution',
+  'enhancement',
+  'augmentation',
+  'efficiency',
+  'encryption',
+  'streams',
+  'incentives',
+  'industries',
+  'finance',
+  'ratios',
+  'assets',
+  'resources',
+  'firmware',
+  'software',
+  'hardware',
+  'media',
+  'synergy',
+  'operations',
+  'bots',
+  'generation',
+  'learning',
+  'machines',
+  'continuity',
+  'businesses',
+  'economies',
+  'practices',
+  'development',
+  'knowledge',
+  'engagement',
+  'innovation',
+  'dashboards',
+  'management',
+  'blogging',
+  'contracts',
+  'communication',
+  'marketing',
+  'markets',
+  'security',
+  'privacy',
+  'emulation',
+  'experiments',
+  'support',
+  'solutions',
+  'websites',
+  'graphs',
+  'information',
+  'infrastructure',
+  'processing',
+  'processes',
+  'technology',
+  'algorithms',
+  'aesthetics',
+  'servers',
+  'funding',
+  'seminars',
+  'webinars'
+];
+function letterRepeated(a, b) {
+  return a.slice(-1) == b[0];
+}
+function generatePhrase(){
+  const leadInHTML = document.getElementById('leadin');
+  leadInHTML.innerHTML = leadIns[Math.floor(Math.random() * leadIns.length)];
+  // shuffle prefixes so two unique but random prefixes can be grabbed at once
+  const shuffledP = [...prefixes].sort(() => 0.5 - Math.random());
+  // get prefixes (1 or 2)
+  const prefixCount = Math.floor(Math.random() * 2) + 1
+  const randomIndex = Math.floor(Math.random() * shuffledP.length);
+  const p1 = shuffledP[randomIndex];
+  const p2 = randomIndex < shuffledP.length - 1 ? shuffledP[randomIndex + 1] : shuffledP[0];
+  // get adjective
+  const adj1 = adj[Math.floor(Math.random() * adj.length)];
+  // get noun
+  const noun1 = nouns[Math.floor(Math.random() * nouns.length)];
+  // replace phrase in HTML
+  const phraseHTML = document.getElementById('phrase');
+  if(prefixCount == 1) {
+    const prefixLocation = Math.floor(Math.random() * 2);
+    if(prefixLocation == 0) {
+      phraseHTML.innerHTML = letterRepeated(p1, adj1) ? `${p1}-${adj1} ${noun1}` : `${p1}${adj1} ${noun1}`;
+    } else {
+      phraseHTML.innerHTML = letterRepeated(p1, noun1) ? `${adj1} ${p1}-${noun1}` : `${adj1} ${p1}${noun1}`;
+    }
+  }
+  else {
+    phraseHTML.innerHTML = (letterRepeated(p1, adj1) ? `${p1}-${adj1} ` : `${p1}${adj1} `) +
+      (letterRepeated(p2, noun1) ? `${p2}-${noun1}` : `${p2}${noun1}`);
+  }
+}
+generatePhrase();
+function sndFX_click(){
+        var audio = document.createElement("audio");
+        audio.src = "https://www.soundjay.com/buttons/button-3.mp3";
+        audio.addEventListener("ended", function () {
+            document.removeChild(this);
+        }, false);
+        audio.play();   
+    }
+$('#makeNoise').bind("click",function() {
+  sndFX_click();
+}); 
+</script>
+</body>
+</html>
